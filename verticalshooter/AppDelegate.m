@@ -23,7 +23,7 @@
     running = false;
     
     //testing
-    [self loadModelFromFile];
+    [self loadModelFromFile:@"car_model"];
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     CGFloat screenScale = [[UIScreen mainScreen] scale];
@@ -108,6 +108,57 @@
     }
     NSLog(@"update thread finished");
 }
+-(void)loadModelFromFile:(NSString*)filename
+{
+    NSError *error;
+    NSString *fullPath = [[NSBundle mainBundle] pathForResource:filename ofType:@"txt"];
+    NSString *fileContents = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:&error];
+    NSArray *sections = [fileContents componentsSeparatedByString:@" "];
+    int vertexCount = 0;
+    int indexCount = 0;
+    NSArray* vertexComponentStrings = [[NSMutableArray alloc] init];
+    NSArray* indexStrings = [[NSMutableArray alloc] init];
+    for(int i=0;i<sections.count;i++)
+    {
+        NSString* section = (NSString*)sections[i];
+        if(i==0)
+        {
+            vertexCount = [section intValue];
+        }
+        else if(i==1)
+        {
+            indexCount = [section intValue];
+        }
+        else if(i==2)
+        {
+            vertexComponentStrings = [section componentsSeparatedByString:@","];
+        }
+        else if(i==3)
+        {
+            indexStrings = [section componentsSeparatedByString:@","];
+        }
+    }
+    
+    Vertex* vertices = malloc(sizeof(Vertex)*vertexCount);
+    for(int i=0;i<vertexCount;i++)
+    {
+        vertices[i].x  = [((NSString*)[vertexComponentStrings objectAtIndex:i*9+0]) floatValue];
+        vertices[i].y  = [((NSString*)[vertexComponentStrings objectAtIndex:i*9+1]) floatValue];
+        vertices[i].z  = [((NSString*)[vertexComponentStrings objectAtIndex:i*9+2]) floatValue];
+        vertices[i].nx = [((NSString*)[vertexComponentStrings objectAtIndex:i*9+3]) floatValue];
+        vertices[i].ny = [((NSString*)[vertexComponentStrings objectAtIndex:i*9+4]) floatValue];
+        vertices[i].nz = [((NSString*)[vertexComponentStrings objectAtIndex:i*9+5]) floatValue];
+        vertices[i].r  = [((NSString*)[vertexComponentStrings objectAtIndex:i*9+6]) floatValue];
+        vertices[i].g  = [((NSString*)[vertexComponentStrings objectAtIndex:i*9+7]) floatValue];
+        vertices[i].b  = [((NSString*)[vertexComponentStrings objectAtIndex:i*9+8]) floatValue];
+    }
+    
+    GLushort* indices = malloc(sizeof(GLushort)*indexCount);
+    for(int i=0;i<indexCount;i++)
+        indices[i] = (GLushort)[((NSString*)[indexStrings objectAtIndex:i]) intValue];
+    
+    loadModel(vertexCount, indexCount, vertices, indices);
+}
 -(void)loadModelFromFile
 {
     NSError *error;
@@ -139,7 +190,7 @@
         }
     }
     
-    newVertex* vertices = malloc(sizeof(newVertex)*vertexCount);
+    Vertex* vertices = malloc(sizeof(Vertex)*vertexCount);
     for(int i=0;i<vertexCount;i++)
     {
         vertices[i].x  = [((NSString*)[vertexComponentStrings objectAtIndex:i*9+0]) floatValue];
@@ -153,18 +204,11 @@
         vertices[i].b  = [((NSString*)[vertexComponentStrings objectAtIndex:i*9+8]) floatValue];
     }
     
-//    float* vertexComponents = malloc(sizeof(float)*vertexCount*9); //3 coords, 3 norms, 3 colors
-//    for(int i=0;i<vertexCount*9;i++)
-//        vertexComponents[i] = [((NSString*)[vertexComponentStrings objectAtIndex:i]) floatValue];
-    
     GLushort* indices = malloc(sizeof(int)*indexCount);
     for(int i=0;i<indexCount;i++)
         indices[i] = (GLushort)[((NSString*)[indexStrings objectAtIndex:i]) intValue];
     
-    NSLog(@"");
-    
     loadModel(vertexCount, indexCount, vertices, indices);
-    
 }
 
 @end

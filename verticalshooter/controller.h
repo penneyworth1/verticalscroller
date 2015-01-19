@@ -15,6 +15,6 @@
 #endif /* defined(__verticalshooter__controller__) */
 
 int updateWorld(int timeDiffMillies);
-void loadModel(int vertexCount, int indexCount, newVertex* vertexComponents, GLushort* indices);
+void loadModel(int vertexCount, int indexCount, Vertex* vertexComponents, GLushort* indices);
 
 

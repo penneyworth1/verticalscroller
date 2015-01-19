@@ -155,7 +155,7 @@ void setupVBOs()
     GLuint vertexBuffer;
     glGenBuffers(1, &vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(newVertex)*theModel.VertexCount, theModel.Vertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex)*theModel.VertexCount, theModel.Vertices, GL_STATIC_DRAW);
     
     GLuint indexBuffer;
     glGenBuffers(1, &indexBuffer);
@@ -174,7 +174,7 @@ void initView(float screenWidthInPixelsPar, float screenHeightInPixelsPar)
     float fov=30.0f; // in degrees
     float aspect=((float)screenWidthInPixels)/screenHeightInPixels;
     float znear=10.0f;
-    float zfar=100.0f;
+    float zfar=10000.0f;
     buildPerspProjMat(perspectiveMatrix, fov, aspect, znear, zfar);
     glViewport(0, 0, screenWidthInPixels, screenHeightInPixels);
     
@@ -205,7 +205,7 @@ void renderScene()
     quat[2] = rotAxis[2] * sinHalfAngle;
     
     setRotationMatrx(rotationMatrix, quat);
-    setTranslationMatrix(translationMatrix, cos(angle), sin(angle), -30 + 18*sin(angle));
+    setTranslationMatrix(translationMatrix, cos(angle), sin(angle), -1000 + 18*sin(angle));
     
     //Combine transformation matrices so the shader does not recalculate the combined transformation for each vertex.
     matMult4x4by4x4(transRotMatrix, translationMatrix, rotationMatrix);

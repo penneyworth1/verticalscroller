@@ -21,6 +21,9 @@
 		D3854D611A59C92F0097D897 /* renderer.c in Sources */ = {isa = PBXBuildFile; fileRef = D3854D5F1A59C92F0097D897 /* renderer.c */; };
 		D3854D641A59C9810097D897 /* controller.c in Sources */ = {isa = PBXBuildFile; fileRef = D3854D621A59C9810097D897 /* controller.c */; };
 		D3854D671A5A08480097D897 /* potion_model.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3854D661A5A08480097D897 /* potion_model.txt */; };
+		D3854D6C1A5B9CDA0097D897 /* simple_model.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3854D6B1A5B9CDA0097D897 /* simple_model.txt */; };
+		D3992CDF1A6613BB00EBAB49 /* simple_ship.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3992CDE1A6613BB00EBAB49 /* simple_ship.txt */; };
+		D3992CE31A6CAAB800EBAB49 /* car_model.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3992CE21A6CAAB800EBAB49 /* car_model.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		D3854D621A59C9810097D897 /* controller.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = controller.c; sourceTree = "<group>"; };
 		D3854D631A59C9810097D897 /* controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controller.h; sourceTree = "<group>"; };
 		D3854D661A5A08480097D897 /* potion_model.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = potion_model.txt; sourceTree = "<group>"; };
+		D3854D6B1A5B9CDA0097D897 /* simple_model.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = simple_model.txt; sourceTree = "<group>"; };
+		D3992CDE1A6613BB00EBAB49 /* simple_ship.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = simple_ship.txt; sourceTree = "<group>"; };
+		D3992CE21A6CAAB800EBAB49 /* car_model.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = car_model.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +161,9 @@
 		D3854D651A5A07EA0097D897 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D3992CE21A6CAAB800EBAB49 /* car_model.txt */,
+				D3992CDE1A6613BB00EBAB49 /* simple_ship.txt */,
+				D3854D6B1A5B9CDA0097D897 /* simple_model.txt */,
 				D3854D661A5A08480097D897 /* potion_model.txt */,
 			);
 			name = Models;
@@ -254,9 +263,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3854D6C1A5B9CDA0097D897 /* simple_model.txt in Resources */,
 				D3854D381A599DBE0097D897 /* Main.storyboard in Resources */,
 				D3854D3D1A599DBE0097D897 /* LaunchScreen.xib in Resources */,
 				D3854D3A1A599DBE0097D897 /* Images.xcassets in Resources */,
+				D3992CE31A6CAAB800EBAB49 /* car_model.txt in Resources */,
+				D3992CDF1A6613BB00EBAB49 /* simple_ship.txt in Resources */,
 				D3854D671A5A08480097D897 /* potion_model.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +491,7 @@
 				D3854D4E1A599DBE0097D897 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3854D4F1A599DBE0097D897 /* Build configuration list for PBXNativeTarget "verticalshooterTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +500,7 @@
 				D3854D511A599DBE0097D897 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

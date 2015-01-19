@@ -27,19 +27,13 @@
 #define STRUCTS_AND_VARS
 typedef struct
 {
-    float Position[3];
-    float Normal[3];
-    float DiffuseMaterial[3];
-} Vertex;
-typedef struct
-{
     float x,y,z,nx,ny,nz,r,g,b;
-}newVertex;
+}Vertex;
 typedef struct
 {
     int VertexCount;
     int IndexCount;
-    newVertex* Vertices;
+    Vertex* Vertices;
     GLushort* Indices;
 } Model;
 
@@ -77,8 +71,10 @@ float rotAxis[3];
 float quat[4]; //rotation quaternion
 float xx,yy,zz,xy,xz,yz,wx,wy,wz;
 
+void initDataModel();
+
 #endif
 
 
 
-void initDataModel();
+
