@@ -23,7 +23,7 @@
     running = false;
     
     //testing
-    [self loadModelFromFile:@"car_model"];
+    [self loadModelFromFile:@"ship2_model"];
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     CGFloat screenScale = [[UIScreen mainScreen] scale];

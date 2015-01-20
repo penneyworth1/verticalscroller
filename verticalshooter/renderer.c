@@ -205,7 +205,7 @@ void renderScene()
     quat[2] = rotAxis[2] * sinHalfAngle;
     
     setRotationMatrx(rotationMatrix, quat);
-    setTranslationMatrix(translationMatrix, cos(angle), sin(angle), -1000 + 18*sin(angle));
+    setTranslationMatrix(translationMatrix, cos(angle), sin(angle), -40 + 18*sin(angle));
     
     //Combine transformation matrices so the shader does not recalculate the combined transformation for each vertex.
     matMult4x4by4x4(transRotMatrix, translationMatrix, rotationMatrix);

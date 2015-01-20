@@ -24,6 +24,8 @@
 		D3854D6C1A5B9CDA0097D897 /* simple_model.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3854D6B1A5B9CDA0097D897 /* simple_model.txt */; };
 		D3992CDF1A6613BB00EBAB49 /* simple_ship.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3992CDE1A6613BB00EBAB49 /* simple_ship.txt */; };
 		D3992CE31A6CAAB800EBAB49 /* car_model.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3992CE21A6CAAB800EBAB49 /* car_model.txt */; };
+		D3992CE51A6E0C6200EBAB49 /* ship3_model.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3992CE41A6E0C6200EBAB49 /* ship3_model.txt */; };
+		D3992CE91A6E13A000EBAB49 /* ship2_model.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3992CE81A6E13A000EBAB49 /* ship2_model.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		D3854D6B1A5B9CDA0097D897 /* simple_model.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = simple_model.txt; sourceTree = "<group>"; };
 		D3992CDE1A6613BB00EBAB49 /* simple_ship.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = simple_ship.txt; sourceTree = "<group>"; };
 		D3992CE21A6CAAB800EBAB49 /* car_model.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = car_model.txt; sourceTree = "<group>"; };
+		D3992CE41A6E0C6200EBAB49 /* ship3_model.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ship3_model.txt; sourceTree = "<group>"; };
+		D3992CE81A6E13A000EBAB49 /* ship2_model.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ship2_model.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,8 @@
 		D3854D651A5A07EA0097D897 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D3992CE81A6E13A000EBAB49 /* ship2_model.txt */,
+				D3992CE41A6E0C6200EBAB49 /* ship3_model.txt */,
 				D3992CE21A6CAAB800EBAB49 /* car_model.txt */,
 				D3992CDE1A6613BB00EBAB49 /* simple_ship.txt */,
 				D3854D6B1A5B9CDA0097D897 /* simple_model.txt */,
@@ -267,8 +273,10 @@
 				D3854D381A599DBE0097D897 /* Main.storyboard in Resources */,
 				D3854D3D1A599DBE0097D897 /* LaunchScreen.xib in Resources */,
 				D3854D3A1A599DBE0097D897 /* Images.xcassets in Resources */,
+				D3992CE51A6E0C6200EBAB49 /* ship3_model.txt in Resources */,
 				D3992CE31A6CAAB800EBAB49 /* car_model.txt in Resources */,
 				D3992CDF1A6613BB00EBAB49 /* simple_ship.txt in Resources */,
+				D3992CE91A6E13A000EBAB49 /* ship2_model.txt in Resources */,
 				D3854D671A5A08480097D897 /* potion_model.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
